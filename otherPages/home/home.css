@@ -50,7 +50,7 @@ hr {
     border: 2px solid #F4F3F3;
     border-radius: 10px;
 }
-@media only screen and (min-width: 376px) and (max-width: 1023px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
     * {
         font-size: 40px;
     }
