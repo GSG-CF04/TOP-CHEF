@@ -1,0 +1,107 @@
+* {
+    margin: 0 auto;
+    font-family: Righteous-Regular;
+    font-size: 28px;
+}
+@font-face {
+    font-family: Righteous-Regular;
+    src: url("../../assets/font/Righteous-Regular.ttf");
+}
+.left-arrow {
+    font-size: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
+    color: #f79259;
+    cursor: pointer;
+}
+.logo{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    float: right;
+    margin-right: 25px;
+    margin-top: 25px;
+}
+.title {
+    text-align: center;
+    margin: 70px 0px 60px 0px;
+}
+.food-img, .drinks-img {
+    display: inline-block;
+    width: 260px;
+    height: 166px;
+    margin-left: 15%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+.or {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-bottom: 5%;
+}
+hr {
+    margin: 5vh auto 4vh;
+    width: 50vw;
+    background-color: #F4F3F3;
+    border: 2px solid #F4F3F3;
+    border-radius: 10px;
+}
+@media only screen and (min-width: 376px) and (max-width: 1023px) {
+    * {
+        font-size: 40px;
+    }
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin-right: 35px;
+    }
+    .left-arrow {
+        font-size: 50px;
+        margin-left: 35px;
+    }
+    .title {
+        text-align: center;
+    }
+    .food-img, .drinks-img {
+        display: block;
+        width: 380px;
+        height: 220px;
+        border-radius: 200px;
+        margin-left: 25%;
+    }
+    hr {
+        margin: 5vh auto 4vh;
+        width: 50vw;
+        background-color: #F4F3F3;
+        border: 2px solid #F4F3F3;
+    }
+}
+@media (min-width: 1024px) {
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin-right: 35px;
+    }
+    .title {
+        margin-top: 3.5%;
+    }
+    .left-arrow {
+        font-size: 50px;
+        margin-left: 35px;
+    }
+    hr {
+        margin: 21vh auto 2vh;
+        width: 30vw;
+    }
+    .container {
+        display: flex;
+        text-align: center;
+    }
+    .or {
+        margin-top: 5%;
+    }
+}
