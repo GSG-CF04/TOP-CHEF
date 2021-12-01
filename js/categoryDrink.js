@@ -34,6 +34,14 @@ for( let i=0;i<catDrinkNameLocal.length;i++) {
                        </div>
                        </a>`
                 }
+                let link=document.querySelectorAll('.drink-cat')
+                for (let i=0 ;i<link.length;i++){
+                    link[i].addEventListener('click',(e)=>{
+                        console.log(link[i].childNodes[1].childNodes[1].childNodes[1])
+                        const nameCategory=link[i].childNodes[1].childNodes[1].childNodes[1].textContent
+                        localStorage.setItem('catDrink',nameCategory)
+                    })
+                }
             
             }
         ) 
