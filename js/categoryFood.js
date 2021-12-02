@@ -1,6 +1,5 @@
 let catMeal=document.getElementsByClassName('categories-food')
 let catLocal=[]
-localStorage.setItem("categoriesLocal", JSON.stringify(catLocal));
 const fetchCategories = () => {
   fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
   .then(res =>res.json())
@@ -26,8 +25,10 @@ const addToLocalStorage = function (image, nameCat) {
   catLocal.push({ imageSrc: image, name: nameCat });
   localStorage.setItem("categoriesLocal", JSON.stringify(catLocal));
 };
+// fetchCategories()
+
 window.onload = () => {
-  let getCatLocal =JSON.parse(localStorage.getItem("categoriesLocal"))
+  let getCatLocal =JSON.parse(localStorage.getItem("categoriesLocal")) || []
   if (getCatLocal.length === 0) {
     fetchCategories()
   }else {
