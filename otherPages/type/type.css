@@ -98,7 +98,7 @@ i{
     margin-bottom: 12px;
     text-align: center;
     font-size: 30px;
-    height: 300px;
+    height: 350px;
     border: 5px solid var(--main-color);
     border-radius: 16px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -111,15 +111,15 @@ i{
 .cards-food .card p,.cards-drink .card p {
     width: 100%;
     height: 50px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
     margin: 10% 0 10% 0 ;
     text-align: center;
-    overflow: hidden;
 }
 .cards-food .card button,.cards-drink .card button {
     width: 130px;
     height: 50px;
+    margin-top: 40px;
     background-color: var(--main-color);
     border: none;
     border-radius: 20px;
@@ -133,13 +133,13 @@ i{
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .cards-food .card,.cards-drink .card { 
         width: 25.33vw;
-        height: 320px;
+        height: 350px;
     }
 }
 @media (min-width: 1024px) {
     .cards-food .card,.cards-drink .card { 
         width: 18.5vw;
-        height: 22rem;
+        height: 390px;
     }
     .cards-food .card img,.cards-drink .card img {
         height: 170px;
