@@ -10,9 +10,7 @@ searchInp.addEventListener("keyup", (e) => {
     let filterd = final.drinks.filter((ch) => {
         return ch.strDrink.toUpperCase().includes(searchString.toUpperCase());
     });
-    console.log(e.key)
     if(e.key ==="Enter"){searchInp.value=""}
-
     showMeals(filterd);
 });
 /* End Event Listener */
@@ -24,7 +22,6 @@ const loadCh = async () => {
     );
     final = await res.json();
         let arr  = final.drinks;
-    // console.log(final);
     showMeals(arr);
     } catch (err) {
     console.log(err);
