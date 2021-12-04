@@ -11,7 +11,6 @@ searchInp.addEventListener("keyup", (e) => {
         return ch.strMeal.toUpperCase().includes(searchString.toUpperCase());
     });
     if(e.key ==="Enter"){searchInp.value=""}
-
     showMeals(filterd);
 });
 /* End Event Listener */
