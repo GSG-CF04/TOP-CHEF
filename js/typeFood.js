@@ -10,7 +10,6 @@ searchInp.addEventListener("keyup", (e) => {
     let filterd = final.meals.filter((ch) => {
         return ch.strMeal.toUpperCase().includes(searchString.toUpperCase());
     });
-    console.log(e.key)
     if(e.key ==="Enter"){searchInp.value=""}
 
     showMeals(filterd);
@@ -24,7 +23,6 @@ const loadCh = async () => {
     );
     final = await res.json();
         let arr  = final.meals;
-    // console.log(final);
     showMeals(arr);
     } catch (err) {
     console.log(err);
