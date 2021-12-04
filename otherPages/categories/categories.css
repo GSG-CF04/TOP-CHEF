@@ -77,14 +77,19 @@ a {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.overlay span {
+.categories-food a .category .overlay span,
+.categories-drink a .category .overlay span {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 1.5rem;
+    word-wrap: break-word;
     color: #FBC6A7;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #000000;
+}
+.categories-drink a .category .overlay span {
+  font-size: 1rem;
 }
 
 @media screen and (min-width : 768px) and (max-width:1023px)  {
