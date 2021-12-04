@@ -1,9 +1,14 @@
+/* Start Geneal Style */
 *{
     padding: 0;
     margin: 0;
     font-family: Montserrat, sans-serif;
     box-sizing: border-box;
 }
+:root {
+    --main-color : #f79259 ;
+}
+/* Start Geneal Style */
 /* Start Header Section Style */
 header {
     display: flex;
@@ -18,7 +23,7 @@ header img {
 header i {
     font-size: 40px;
     border: none;
-    color: #F79259;
+    color:var(--main-color);
     border-radius: 50px;
     cursor: pointer;
 }
@@ -31,10 +36,14 @@ header i {
     margin: auto;
     flex-direction: column;
 }
+i{
+    cursor: pointer;
+    color: white;
+}
 .search {
     display: flex;
     background-color: #FBC6A7;
-    border: 2px solid #F79259;
+    border: 2px solid var(--main-color);
     border-radius: 50px;
     margin-bottom: 1rem;
 }
@@ -65,7 +74,7 @@ header i {
     height: 48px;
     font-size: 1.8rem;
     background: transparent;
-    color: #F79259;
+    color: var(--main-color);
     border: none;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
@@ -76,21 +85,21 @@ header i {
     -o-transition: all 0.4s linear;
 }
 /* End Search Section */
+/* Start Cards Style */
 .cards-food,.cards-drink{
     display: flex;
-    justify-content:flex-start;
     flex-wrap: wrap;
-    gap: 2vw;
-    width:80vw;
-    margin: 0 auto
+    padding: 5px;
+    gap: 20px;
+    justify-content: center;
 }
 .cards-food .card ,.cards-drink .card{
     width: 39vw;
     margin-bottom: 12px;
     text-align: center;
     font-size: 30px;
-    height: 300px;
-    border: 5px solid #F79259;
+    height: 350px;
+    border: 5px solid var(--main-color);
     border-radius: 16px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -101,8 +110,8 @@ header i {
 }
 .cards-food .card p,.cards-drink .card p {
     width: 100%;
-    height: 40px;
-    font-size: 18px;
+    height: 50px;
+    font-size: 16px;
     line-height: 20px;
     margin: 10% 0 10% 0 ;
     text-align: center;
@@ -110,7 +119,8 @@ header i {
 .cards-food .card button,.cards-drink .card button {
     width: 130px;
     height: 50px;
-    background-color: #F79259;
+    margin-top: 40px;
+    background-color: var(--main-color);
     border: none;
     border-radius: 20px;
     text-align: center;
@@ -118,17 +128,21 @@ header i {
     font-size: 20px;
     line-height: 20px;
 }
+/* End Cards Style */
+/* Start Media */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .cards-food .card,.cards-drink .card { 
         width: 25.33vw;
+        height: 350px;
     }
 }
 @media (min-width: 1024px) {
     .cards-food .card,.cards-drink .card { 
         width: 18.5vw;
-        height: 22rem;
+        height: 390px;
     }
     .cards-food .card img,.cards-drink .card img {
         height: 170px;
     }
 }
+/* End Media */
