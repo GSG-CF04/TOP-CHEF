@@ -5,6 +5,7 @@ const holder = document.querySelector(".cards-drink");
 let titelCat = document.querySelector(".header-search");
 let catName = localStorage.getItem('catDrink');
 let parent = document.querySelector(".overlay");
+let container = document.createElement("div");
 /* End Selectors */
 /* Start Event Listener */
 titelCat.innerHTML= `<h2>${catName} Category</h2>`;
@@ -53,3 +54,47 @@ function getDrinkRecipe(e) {
     .then((response) => response.json())
     .then((data) => drinkRecipeModal(data.drinks));
 }
+// create the popup content for drinks recipes
+function drinkRecipeModal(drink) {
+    container.setAttribute("class", "pop-up");
+    parent.appendChild(container); 
+    container.innerHTML = `
+      <div id="head-container"><i class="fas fa-times-circle close" onclick="closePopupWindow()"></i>
+        <h3 class = "recipe-title">${drink[0].strDrink}</h3>
+        <div class="bar">
+        <button id="ing" class=" ingr-btn-style" onclick="showIngredients()">Ingredients</button>
+        <button id="rec" class=" recpie-btn" onclick="showRecipe()">Recpie</button>
+      </div>
+      </div>
+      <div class="ing-with-measures">
+      <div class="measures"><p class="measure-P"></p></div>
+      <div class="ing-text"><p class="ing-p"></p> 
+  </div>
+  </div>
+  <div class="recpie-text">${drink[0].strInstructions}</div>`;
+    let measureP = document.querySelector(".measure-P");
+    for (const key of Object.keys(drink[0])) {
+      for (let i = 1; i <= 20; i++) {
+        if (
+          key === `strMeasure${i}` &&
+          drink[0][key] != null &&
+          drink[0][key] != ""
+        ) {
+          measureP.innerHTML += `${drink[0][key]}<br>`;
+        }
+      }
+    }
+    let ingP = document.querySelector(".ing-p");
+    for (const key of Object.keys(drink[0])) {
+      for (let i = 1; i <= 20; i++) {
+        if (
+          key === `strIngredient${i}` &&
+          drink[0][key] != null &&
+          drink[0][key] != ""
+        ) {
+          ingP.innerHTML += `${drink[0][key]}<br>`;
+        }
+      }
+    }
+  }
+  // End of the popup content for drinks recipes
