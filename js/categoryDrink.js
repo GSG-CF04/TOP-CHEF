@@ -11,26 +11,29 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
             catDrinkName.push(`${ele.strCategory}`)     
         })
     localStorage.setItem('catDrinkName',JSON.stringify(catDrinkName))
+    fetchFirstImageForCategory()
     }   
 )
 .catch(err => alert(err))
+const fetchFirstImageForCategory =() => {
+  let catDrinkNameLocal=JSON.parse(localStorage.getItem("catDrinkName")) || []
+  for( let i=0;i<catDrinkNameLocal.length;i++) {
+      fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${catDrinkNameLocal[i]}`)
+      .then(res =>res.json())
+      .then(
+              dataCat =>{
+              let dataDrink=dataCat.drinks
+                  for (let x=0;x<1;x++) {
+                         addCategories(dataDrink[0].strDrinkThumb,catDrinkNameLocal[i])
+                         addToLocalStorage(dataDrink[0].strDrinkThumb,catDrinkNameLocal[i])
+                  }
+              }
+          ) 
+      .catch(err => alert(err))               
+  }
+  }
+}
 
-let catDrinkNameLocal=JSON.parse(localStorage.getItem("catDrinkName")) || []
-for( let i=0;i<catDrinkNameLocal.length;i++) {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${catDrinkNameLocal[i]}`)
-    .then(res =>res.json())
-    .then(
-            dataCat =>{
-            let dataDrink=dataCat.drinks
-                for (let x=0;x<1;x++) {
-                       addCategories(dataDrink[0].strDrinkThumb,catDrinkNameLocal[i])
-                       addToLocalStorage(dataDrink[0].strDrinkThumb,catDrinkNameLocal[i])
-                }
-            }
-        ) 
-    .catch(err => alert(err))               
-}
-}
 
 const addToLocalStorage = function (image, nameCat) {
     catDrinkLocal.push({ imageSrc: image, name: nameCat });
