@@ -2,9 +2,13 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: Righteous-Regular;
+    src: url("../../assets/font/Righteous-Regular.ttf");
+  }
 :root {
     --main-color : #f79259 ;
 }
@@ -38,11 +42,11 @@ header i {
 }
 i{
     cursor: pointer;
-    color: white;
+    color: var(--main-color);;
 }
 .search {
     display: flex;
-    background-color: #FBC6A7;
+    background-color: #ffd7bf;
     border: 2px solid var(--main-color);
     border-radius: 50px;
     margin-bottom: 1rem;
@@ -59,7 +63,7 @@ i{
     padding: 0 1rem;
     font-size: 1.1rem;
     font-family: inherit;
-    background-color: #FBC6A7;
+    background-color: #ffd7bf;
     outline: 0;
     border: none;
     color:black;
@@ -67,7 +71,7 @@ i{
     border-bottom-left-radius: 2rem;
 }
 .search-control::placeholder{
-    color: #F79259;
+    color: var(--main-color);
 }
 .search-btn{
     width: 55px;
@@ -127,13 +131,209 @@ i{
     color: white;
     font-size: 20px;
     line-height: 20px;
+    cursor: pointer;
 }
 /* End Cards Style */
+/* start popup style */
+.overlay {
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(236, 202, 195, 0.76);
+    z-index: 1;
+}
+.pop-up {
+    background-color: white;
+    padding: 15px;
+    width: 90%;
+    height: 90%;
+    border: 0 none;
+    padding: 20px;
+    border-radius: 53px;
+    margin: 10% auto;
+    left: -15px;
+    overflow: scroll;
+}
+#head-container {
+    position: fixed;
+    width: 90%;
+    margin-left: -5.5%;
+    margin-top: -6%;
+    border-radius: 53px;
+    background-color: white;
+}
+.pop-up .close {
+    color: #f79259;
+    font-size: 35px;
+    margin-left: 85%;
+    margin-top: 3%;
+    cursor: pointer;
+    }
+    .recipe-title {
+    font-family: Righteous-Regular;
+    color: #db8858;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 5px;
+}
+.bar {
+    display: flex;
+    width: 310px;
+    height: 65px;
+    padding: 8px;
+    margin-left: 5%;
+    border-radius: 30px;
+    background: #e3e1e1;
+}
+.ingr-btn {
+    width: 135px;
+    height: 50px;
+    border: none;
+    font-size: 19px;
+    color: #999999;
+    background: #e3e1e1;
+    cursor: pointer;
+}
+.recpie-btn {
+    width: 135px;
+    height: 50px;
+    border: none;
+    font-size: 19px;
+    color: #999999;
+    background: #e3e1e1;
+    cursor: pointer;
+}
+.ingr-btn-style {
+    width: 135px;
+    height: 50px;
+    border: none;
+    font-size: 19px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #f79259;
+    border: 5px solid #f3dfd9;
+    border-radius: 30px;
+}
+.recpie-btn-style {
+    width: 135px;
+    height: 50px;
+    border: none;
+    font-size: 19px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #f79259;
+    border: 5px solid #f3dfd9;
+    border-radius: 30px;
+}
+.ing-with-measures {
+    display: flex;
+    width: 135%;
+    line-height: 40px;
+    margin-top: 48%;
+    margin-left: 2%;
+}
+.measures {
+    width: 30%;
+    font-size: 15px;
+    margin: 5%;
+    word-spacing: 1px;
+}
+.ing-text {
+    font-size: 17px;
+    margin: 4%;
+    margin-left: 8%;
+    word-spacing: 1px;
+    letter-spacing: 0px;
+}
+.recpie-text {
+    display: none;
+    margin: 7%;
+    padding: auto;
+    font-size: 19px;
+    line-height: 30px;
+    margin-left: 2%;
+}
+/* end popup style */
 /* Start Media */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .cards-food .card,.cards-drink .card { 
         width: 25.33vw;
         height: 350px;
+    }
+    .pop-up .close {
+        font-size: 50px;
+    }
+    .recipe-title {
+        font-size: 25px;
+    }
+    .pop-up {
+        width: 80%;
+        height: 80%;
+        margin-top: 15%;
+        overflow-x: hidden;
+    }
+    #head-container {
+    width: 79.8%;
+    height: 20%;
+    margin-left: -2.7%;
+    overflow-x: hidden;
+    }
+    .bar {
+    width: 80%;
+    margin-left: 11%;
+    margin-top: 2%;
+    } 
+    .ingr-btn {
+    width: 180px;
+    height: 55px;
+    font-size: 25px;
+    margin-top: -0.5%;
+    margin-left: 8%;
+    }
+    .recpie-btn {
+    width: 135px;
+    height: 50px;
+    font-size: 25px;
+    margin-left: 10%;
+    }
+  
+    .ingr-btn-style {
+    width: 180px;
+    height: 55px;
+    font-size: 25px;
+    margin-top: -0.5%;
+    margin-left: 8%;
+    }
+    .recpie-btn-style {
+    width: 180px;
+    height: 55px;
+    margin-top: -0.5%;
+    font-size: 25px;
+    margin-left: 10%;
+    }
+    .ing-with-measures {
+    margin-top: 28%;
+    width: 99%;
+    margin-left: 5%;
+    }
+    .measures {
+    font-size: 18px;
+    margin-left: 11%;
+    }
+    .ing-text {
+    font-size: 19px;
+    width: 80%;
+    }
+    .recpie-text {
+    font-size: 22px;
+    margin-left: 5%;
+    margin-top: 5%;
+    line-height: 40px;
     }
 }
 @media (min-width: 1024px) {
@@ -143,6 +343,80 @@ i{
     }
     .cards-food .card img,.cards-drink .card img {
         height: 170px;
+    }
+    .pop-up {
+        width: 50%;
+        height: 85%;
+        margin-top: 4%;
+        overflow-x: hidden;
+    }
+    .pop-up::-webkit-scrollbar { width: 0 !important }
+    .pop-up { overflow: -moz-scrollbars-none; }
+    .pop-up { -ms-overflow-style: none; }
+    .pop-up .close {
+    font-size: 40px;
+    }
+    .recipe-title {
+    font-size: 25px;
+    }
+    #head-container {
+    width: 50%;
+    height: 30%;
+    margin-left: -1.5%;
+    margin-top: -2%;
+    }
+    .bar {
+    width: 80%;
+    margin-left: 11%;
+    margin-top: 0%;
+    }
+  
+    .ingr-btn {
+    width: 180px;
+    height: 55px;
+    font-size: 23px;
+    margin-top: -0.5%;
+    margin-left: 8%;
+    }
+    .recpie-btn {
+    width: 135px;
+    height: 50px;
+    font-size: 23px;
+    margin-left: 10%;
+    }
+  
+    .ingr-btn-style {
+    width: 180px;
+    height: 55px;
+    font-size: 23px;
+    margin-top: -0.5%;
+    margin-left: 8%;
+    }
+    .recpie-btn-style {
+    width: 180px;
+    height: 55px;
+    margin-top: -0.5%;
+    font-size: 23px;
+    margin-left: 10%;
+    }
+    .ing-with-measures {
+    margin-top: 23%;
+    font-size: 35px;
+    width: 99%;
+    margin-left: 5%;
+    }
+    .measures {
+    font-size: 18px;
+    margin-left: 11%;
+    }
+    .ing-text {
+    font-size: 18px;
+    width: 80%;
+    }
+    .recpie-text {
+    font-size: 20px;
+    margin-left: 5%;
+    line-height: 40px;
     }
 }
 /* End Media */
