@@ -10,7 +10,6 @@ const fetchCategories = () => {
             addCategories(ele.strCategoryThumb,ele.strCategory)
             addToLocalStorage(ele.strCategoryThumb,ele.strCategory)
       })
-      addClickToCategory()
    }   
   )
   .catch(err => alert(err))
