@@ -94,4 +94,33 @@ for (const key of Object.keys(meal[0])) {
         ingP.innerHTML += `${meal[0][key]}<br>`;
     }
 }
+// selectors for innerhtml elements
+let ingBtn = document.querySelector("#ing");
+let recipeBtn = document.querySelector("#rec");
+let recipeText = document.querySelector(".recpie-text");
+let measures = document.querySelector(".measures");
+let ingText = document.querySelector(".ing-text");
+// Adding Event Listener for ingerdients btn in popup
+ingBtn.addEventListener("click", () => {
+measures.style.display = "block";
+ingText.style.display = "block";
+recipeText.style.display = "none";
+recipeBtn.classList.remove("recpie-btn-style");
+recipeBtn.setAttribute("class", "recpie-btn");
+ingBtn.setAttribute("class", "ingr-btn-style");
+});
+// Adding Event Listener for recipe btn in popup
+recipeBtn.addEventListener("click", () => {
+measures.style.display = "none";
+ingText.style.display = "none";
+recipeText.style.display = "block";
+ingBtn.classList.remove("ingr-btn-style");
+ingBtn.setAttribute("class", "ingr-btn");
+recipeBtn.setAttribute("class", "recpie-btn-style");
+});
+}
+// End of the popup content for meal recipe
+// close the popup after clicking the close icon
+function closePopupWindow() {
+    parent.style.display = "none";
 }
