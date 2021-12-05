@@ -2,8 +2,11 @@
 const searchBtn = document.querySelector(".btn");
 const searchInp = document.querySelector(".search-control");
 const holder = document.querySelector(".cards-drink");
+let titelCat = document.querySelector(".header-search");
+let catName = localStorage.getItem('catDrink');
 /* End Selectors */
-/* Start Event Listener */  
+/* Start Event Listener */
+titelCat.innerHTML= `<h2>${catName} Category</h2>`;
 let final = [];
 searchInp.addEventListener("keyup", (e) => {
     const searchString = e.target.value;
@@ -18,7 +21,7 @@ searchInp.addEventListener("keyup", (e) => {
 const loadCh = async () => {
     try {
     let res = await fetch(
-        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${catName}`
     );
     final = await res.json();
         let arr  = final.drinks;

@@ -6,7 +6,7 @@ let titelCat = document.querySelector(".header-search");
 let catName = localStorage.getItem('catFood');
 /* End Selectors */
 /* Start Event Listener */ 
-titelCat.innerHTML= `<h2>${catName} Category</h2>`; 
+titelCat.innerHTML= `<h2>${catName} Category</h2>`;
 let final = [];
 searchInp.addEventListener("keyup", (e) => {
     const searchString = e.target.value;
