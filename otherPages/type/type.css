@@ -2,8 +2,10 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
 }
 @font-face {
     font-family: Righteous-Regular;
@@ -52,6 +54,7 @@ i{
     margin-bottom: 1rem;
 }
 .header-search {
+    font-family: Righteous-Regular;
     text-align: center;
     margin-bottom: 15px;
 }
