@@ -172,7 +172,7 @@ i{
     margin-top: 3%;
     cursor: pointer;
     }
-    .recipe-title {
+.recipe-title {
     font-family: Righteous-Regular;
     color: #db8858;
     font-size: 18px;
@@ -190,7 +190,7 @@ i{
     border-radius: 30px;
     background: #e3e1e1;
 }
-.ingr-btn {
+.ingr-btn, .recpie-btn {
     width: 135px;
     height: 50px;
     border: none;
@@ -199,27 +199,7 @@ i{
     background: #e3e1e1;
     cursor: pointer;
 }
-.recpie-btn {
-    width: 135px;
-    height: 50px;
-    border: none;
-    font-size: 19px;
-    color: #999999;
-    background: #e3e1e1;
-    cursor: pointer;
-}
-.ingr-btn-style {
-    width: 135px;
-    height: 50px;
-    border: none;
-    font-size: 19px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #f79259;
-    border: 5px solid #f3dfd9;
-    border-radius: 30px;
-}
-.recpie-btn-style {
+.ingr-btn-style, .recpie-btn-style {
     width: 135px;
     height: 50px;
     border: none;
@@ -296,24 +276,19 @@ i{
     margin-left: 8%;
     }
     .recpie-btn {
-    width: 135px;
-    height: 50px;
     font-size: 25px;
     margin-left: 10%;
-    }
-  
-    .ingr-btn-style {
+    }  
+    .ingr-btn-style, .recpie-btn-style {
     width: 180px;
     height: 55px;
-    font-size: 25px;
     margin-top: -0.5%;
+    font-size: 25px;
+    }
+    .ingr-btn-style {
     margin-left: 8%;
     }
     .recpie-btn-style {
-    width: 180px;
-    height: 55px;
-    margin-top: -0.5%;
-    font-size: 25px;
     margin-left: 10%;
     }
     .ing-with-measures {
@@ -384,33 +359,28 @@ i{
     font-size: 23px;
     margin-left: 10%;
     }
-  
-    .ingr-btn-style {
+    .ingr-btn-style, .recpie-btn-style {
     width: 180px;
     height: 55px;
     font-size: 23px;
     margin-top: -0.5%;
+    }
+    .ingr-btn-style {
     margin-left: 8%;
     }
     .recpie-btn-style {
-    width: 180px;
-    height: 55px;
-    margin-top: -0.5%;
-    font-size: 23px;
     margin-left: 10%;
     }
     .ing-with-measures {
     margin-top: 23%;
-    font-size: 35px;
+    font-size: 18px;
     width: 99%;
     margin-left: 5%;
     }
     .measures {
-    font-size: 18px;
     margin-left: 11%;
     }
     .ing-text {
-    font-size: 18px;
     width: 80%;
     }
     .recpie-text {
