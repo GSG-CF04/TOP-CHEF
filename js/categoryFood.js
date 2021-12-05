@@ -1,5 +1,5 @@
 let catMeal=document.getElementsByClassName('categories-food')
-let catLocal=[]
+let catFoodLocal=[]
 const fetchCategories = () => {
   fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
   .then(res =>res.json())
@@ -10,25 +10,17 @@ const fetchCategories = () => {
             addCategories(ele.strCategoryThumb,ele.strCategory)
             addToLocalStorage(ele.strCategoryThumb,ele.strCategory)
       })
-      let link=document.querySelectorAll('.a-cat')
-      for (let i=0 ;i<link.length;i++){
-          link[i].addEventListener('click',(e)=>{
-              const nameCategory=link[i].childNodes[1].childNodes[1].childNodes[1].textContent
-              localStorage.setItem('catFood',nameCategory)
-          })
-      }
    }   
   )
   .catch(err => alert(err))
 }
 const addToLocalStorage = function (image, nameCat) {
-  catLocal.push({ imageSrc: image, name: nameCat });
-  localStorage.setItem("categoriesLocal", JSON.stringify(catLocal));
+  catFoodLocal.push({ imageSrc: image, name: nameCat });
+  localStorage.setItem("categoriesFoodLocal", JSON.stringify(catFoodLocal));
 };
-// fetchCategories()
 
 window.onload = () => {
-  let getCatLocal =JSON.parse(localStorage.getItem("categoriesLocal")) || []
+  let getCatLocal =JSON.parse(localStorage.getItem("categoriesFoodLocal")) || []
   if (getCatLocal.length === 0) {
     fetchCategories()
   }else {
@@ -45,4 +37,11 @@ const addCategories = (imageSource, name) => {
         </div>
       </div>
       </a>`;
+      let link=document.querySelectorAll('.a-cat')
+      for (let i=0 ;i<link.length;i++){
+          link[i].addEventListener('click',(e)=>{
+              const nameCategory=link[i].childNodes[1].childNodes[1].childNodes[1].textContent
+              localStorage.setItem('catFood',nameCategory)
+          })
+      }
 };
