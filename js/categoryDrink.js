@@ -61,7 +61,10 @@ window.onload = () => {
   for (let i=0 ;i<link.length;i++){
       link[i].addEventListener('click',(e)=>{
           const nameCategory=link[i].childNodes[1].childNodes[1].childNodes[1].textContent
-          localStorage.setItem('catDrink',nameCategory)
+          addNameToLocal(nameCategory)
       })
   }
-  };
+};
+const addNameToLocal = (name) => {
+  localStorage.setItem('catDrink',name)
+}

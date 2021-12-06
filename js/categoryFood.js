@@ -1,3 +1,4 @@
+let catMealScroll=document.getElementsByClassName('categories-scroll')
 let catMeal=document.getElementsByClassName('categories-food')
 let catFoodLocal=[]
 const fetchCategories = () => {
@@ -30,6 +31,7 @@ window.onload = () => {
 }
 }
 const addCategories = (imageSource, name) => {
+  catMealScroll[0].innerHTML +=` <a class="a-catname" href="../type/typeFood.html">${name}</a>`
   catMeal[0].innerHTML +=`<a class="a-cat" href="../type/typeFood.html">
       <div class="category" style="background-image: url(${imageSource})">
         <div class="overlay">
@@ -41,7 +43,18 @@ const addCategories = (imageSource, name) => {
       for (let i=0 ;i<link.length;i++){
           link[i].addEventListener('click',(e)=>{
               const nameCategory=link[i].childNodes[1].childNodes[1].childNodes[1].textContent
-              localStorage.setItem('catFood',nameCategory)
+              addNameToLocal(nameCategory)
           })
       }
+      let linkName=document.querySelectorAll('.a-catname')
+      for (let i=0 ;i<linkName.length;i++){
+        linkName[i].addEventListener('click',(e)=>{
+            const nameCategory=linkName[i].textContent
+            addNameToLocal(nameCategory)
+        })
+    }
 };
+const addNameToLocal = (name) => {
+  localStorage.setItem('catFood',name)
+}
+
