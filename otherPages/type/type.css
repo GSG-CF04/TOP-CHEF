@@ -150,21 +150,16 @@ i{
 }
 .pop-up {
     background-color: white;
-    padding: 15px;
     width: 90%;
-    height: 90%;
-    border: 0 none;
-    padding: 20px;
+    height: 700px;
     border-radius: 53px;
-    margin: 10% auto;
-    left: -15px;
-    overflow: scroll;
+    margin: 15% auto;
+    overflow: hidden;
 }
 #head-container {
     position: fixed;
     width: 90%;
-    margin-left: -5.5%;
-    margin-top: -6%;
+    height: 200px;
     border-radius: 53px;
     background-color: white;
 }
@@ -182,14 +177,14 @@ i{
     letter-spacing: 2px;
     text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 5px;
+    height: 80px;
 }
 .bar {
     display: flex;
     width: 310px;
     height: 65px;
     padding: 8px;
-    margin-left: 5%;
+    margin-left: 4.5%;
     border-radius: 30px;
     background: #e3e1e1;
 }
@@ -202,6 +197,9 @@ i{
     background: #e3e1e1;
     cursor: pointer;
 }
+.recpie-btn, .recpie-btn-style {
+    margin-left: 20px;
+}
 .ingr-btn-style, .recpie-btn-style {
     width: 135px;
     height: 50px;
@@ -213,33 +211,24 @@ i{
     border: 5px solid #f3dfd9;
     border-radius: 30px;
 }
+.content {
+    width:90%;
+    height: 500px;
+    margin: 200px auto 0;
+    font-size: 20px;
+    line-height: 40px;
+    overflow-y: scroll;
+}
 .ing-with-measures {
     display: flex;
-    width: 135%;
-    line-height: 40px;
-    margin-top: 48%;
-    margin-left: 2%;
+    justify-content: space-evenly;
 }
-.measures {
-    width: 30%;
-    font-size: 15px;
-    margin: 5%;
-    word-spacing: 1px;
-}
-.ing-text {
-    font-size: 17px;
-    margin: 4%;
-    margin-left: 8%;
-    word-spacing: 1px;
-    letter-spacing: 0px;
+.ing-with-measures p {
+    display: inline-block;
 }
 .recpie-text {
     display: none;
-    margin: 7%;
-    padding: auto;
-    font-size: 19px;
-    line-height: 30px;
-    margin-left: 2%;
+    padding: 5px 20px;
 }
 /* end popup style */
 /* Start Media */
@@ -255,21 +244,11 @@ i{
         font-size: 25px;
     }
     .pop-up {
-        width: 80%;
-        height: 80%;
-        margin-top: 15%;
-        overflow-x: hidden;
-    }
-    #head-container {
-    width: 79.8%;
-    height: 20%;
-    margin-left: -2.7%;
-    overflow-x: hidden;
+        margin-top: 22.5%;
     }
     .bar {
     width: 80%;
     margin-left: 11%;
-    margin-top: 2%;
     } 
     .ingr-btn {
     width: 180px;
@@ -294,24 +273,9 @@ i{
     .recpie-btn-style {
     margin-left: 10%;
     }
-    .ing-with-measures {
-    margin-top: 28%;
-    width: 99%;
-    margin-left: 5%;
-    }
-    .measures {
-    font-size: 18px;
-    margin-left: 11%;
-    }
-    .ing-text {
-    font-size: 19px;
-    width: 80%;
-    }
-    .recpie-text {
-    font-size: 22px;
-    margin-left: 5%;
-    margin-top: 5%;
-    line-height: 40px;
+    .content {
+        margin-top: 220px;
+        font-size: 23px;
     }
 }
 @media (min-width: 1024px) {
@@ -325,12 +289,8 @@ i{
     .pop-up {
         width: 50%;
         height: 85%;
-        margin-top: 4%;
-        overflow-x: hidden;
+        margin-top: 3.7%;
     }
-    .pop-up::-webkit-scrollbar { width: 0 !important }
-    .pop-up { overflow: -moz-scrollbars-none; }
-    .pop-up { -ms-overflow-style: none; }
     .pop-up .close {
     font-size: 40px;
     }
@@ -339,22 +299,16 @@ i{
     }
     #head-container {
     width: 50%;
-    height: 30%;
-    margin-left: -1.5%;
-    margin-top: -2%;
     }
     .bar {
     width: 80%;
     margin-left: 11%;
-    margin-top: 0%;
     }
-  
     .ingr-btn {
     width: 180px;
-    height: 55px;
+    height: 50px;
     font-size: 23px;
-    margin-top: -0.5%;
-    margin-left: 8%;
+    margin-left: 10%;
     }
     .recpie-btn {
     width: 135px;
@@ -373,23 +327,6 @@ i{
     }
     .recpie-btn-style {
     margin-left: 10%;
-    }
-    .ing-with-measures {
-    margin-top: 23%;
-    font-size: 18px;
-    width: 99%;
-    margin-left: 5%;
-    }
-    .measures {
-    margin-left: 11%;
-    }
-    .ing-text {
-    width: 80%;
-    }
-    .recpie-text {
-    font-size: 20px;
-    margin-left: 5%;
-    line-height: 40px;
     }
 }
 /* End Media */
