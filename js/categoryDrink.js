@@ -1,7 +1,9 @@
-let catDrinkScroll=document.getElementsByClassName('categories-scroll')
-let catDrink=document.getElementsByClassName('categories-drink')
-let catDrinkName=[]
-let catDrinkLocal=[]
+let catDrinkScroll=document.getElementsByClassName('categories-scroll') //the container for slider
+let catDrink=document.getElementsByClassName('categories-drink')//the container for boxes
+let catDrinkName=[] //the array to store name categories
+let catDrinkLocal=[] // the array to store name,image categories in localStorage
+// function to fetch name category and store in catDrinkName array to used this array 
+//to fetch from another api to take first image for drink 
 const fetchCategories = () => {
 fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
 .then(res =>res.json())
@@ -16,6 +18,8 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
     }   
 )
 .catch(err => alert(err))
+//  to fetch data from api to take first image and then store the name,image categories in localStorage
+//  also call addCategories function to display the categories 
 const fetchFirstImageForCategory =() => {
   let catDrinkNameLocal=JSON.parse(localStorage.getItem("catDrinkName")) || []
   for( let i=0;i<catDrinkNameLocal.length;i++) {
@@ -35,11 +39,14 @@ const fetchFirstImageForCategory =() => {
   }
 }
 
-
+// add  name,image for each category in localStorage
 const addToLocalStorage = function (image, nameCat) {
     catDrinkLocal.push({ imageSrc: image, name: nameCat });
     localStorage.setItem("categoriesDrinkLocal", JSON.stringify(catDrinkLocal));
   };
+//  when reload the page check if there catDrinkLocal array is empty or not 
+//if empety then call the  fetchCategories() function
+//if not empty get data from localStorage and send to  addCategories function to display categories
 window.onload = () => {
     let getCatLocal =JSON.parse(localStorage.getItem("categoriesDrinkLocal")) || []
     if (getCatLocal.length === 0) {
@@ -50,6 +57,7 @@ window.onload = () => {
     })
   }
   }
+ // to create tag and add data in them
   const addCategories = (imageSource, name) => {
     catDrinkScroll[0].innerHTML +=` <a class="a-catname" href="../type/typeDrink.html">${name}</a>`
     catDrink[0].innerHTML +=`<a class="drink-cat" href="../type/typeDrink.html">
@@ -59,6 +67,7 @@ window.onload = () => {
     </div>
   </div>
   </a>`
+  // to add click to box categoery and store the name category in localStorage
   let link=document.querySelectorAll('.drink-cat')
   for (let i=0 ;i<link.length;i++){
       link[i].addEventListener('click',(e)=>{
@@ -66,6 +75,7 @@ window.onload = () => {
           addNameToLocal(nameCategory)
       })
   }
+    // to add click  to name category and  store the name category in localStorage
   let linkName=document.querySelectorAll('.a-catname')
   for (let i=0 ;i<linkName.length;i++){
     linkName[i].addEventListener('click',(e)=>{
@@ -74,6 +84,7 @@ window.onload = () => {
     })
   }
 };
+//to add name category when click in name category or box category to localStoracge
 const addNameToLocal = (name) => {
   localStorage.setItem('catDrink',name)
 }
