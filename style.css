@@ -43,7 +43,6 @@ main {
 hr {
     margin: 0 auto 4vh;
     width: 50vw;
-    background-color: #F4F3F3;
     border: 2px solid #F4F3F3;
 }
 @media screen and (min-width:768px) and (max-width:1023px) {
