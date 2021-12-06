@@ -62,25 +62,27 @@ function drinkRecipeModal(drink) {
       <div id="head-container"><i class="fas fa-times-circle close" onclick="closePopupWindow()"></i>
         <h3 class = "recipe-title">${drink[0].strDrink}</h3>
         <div class="bar">
-        <button id="ing" class=" ingr-btn-style" onclick="showIngredients()">Ingredients</button>
-        <button id="rec" class=" recpie-btn" onclick="showRecipe()">Recpie</button>
+        <button id="ing" class=" ingr-btn-style">Ingredients</button>
+        <button id="rec" class=" recpie-btn">Recpie</button>
       </div>
       </div>
+      <div class="content">
       <div class="ing-with-measures">
-      <div class="measures"><p class="measure-P"></p></div>
-      <div class="ing-text"><p class="ing-p"></p> 
-  </div>
-  </div>
-  <div class="recpie-text">${drink[0].strInstructions}</div>`;
+      <p class="measure-P"></p>
+      <p class="ing-p"></p> 
+      </div>
+  <div class="recpie-text">✎ ${drink[0].strInstructions} ✐</div></div>`;
     let measureP = document.querySelector(".measure-P");
     for (const key of Object.keys(drink[0])) {
       for (let i = 1; i <= 20; i++) {
         if (
           key === `strMeasure${i}` &&
           drink[0][key] != null &&
-          drink[0][key] != ""
+          drink[0][key] != "" &&
+          drink[0][key] != " "
+
         ) {
-          measureP.innerHTML += `${drink[0][key]}<br>`;
+          measureP.innerHTML += `• ${drink[0][key]}<br>`;
         }
       }
     }
@@ -90,31 +92,29 @@ function drinkRecipeModal(drink) {
         if (
         key === `strIngredient${i}` &&
         drink[0][key] != null &&
-        drink[0][key] != ""
+        drink[0][key] != ""  &&
+        drink[0][key] != " "
         ) {
-        ingP.innerHTML += `${drink[0][key]}<br>`;
+        ingP.innerHTML += `→ ${drink[0][key]}<br>`;
         }
     }
     }
-     // selectors for innerhtml elements
+    // selectors for innerhtml elements
     let ingBtn = document.querySelector("#ing");
     let recipeBtn = document.querySelector("#rec");
     let recipeText = document.querySelector(".recpie-text");
-    let measures = document.querySelector(".measures");
-    let ingText = document.querySelector(".ing-text");
-     // Adding Event Listener for ingerdients btn in popup
+    let ingWithMeasures = document.querySelector(".ing-with-measures");
+    // Adding Event Listener for ingerdients btn in popup
     ingBtn.addEventListener("click", () => {
-    measures.style.display = "block";
-    ingText.style.display = "block";
+    ingWithMeasures.style.display = "flex";
     recipeText.style.display = "none";
     recipeBtn.classList.remove("recpie-btn-style");
     recipeBtn.setAttribute("class", "recpie-btn");
     ingBtn.setAttribute("class", "ingr-btn-style");
     });
-     // Adding Event Listener for recipe btn in popup
+    // Adding Event Listener for recipe btn in popup
     recipeBtn.addEventListener("click", () => {
-    measures.style.display = "none";
-    ingText.style.display = "none";
+    ingWithMeasures.style.display = "none";
     recipeText.style.display = "block";
     ingBtn.classList.remove("ingr-btn-style");
     ingBtn.setAttribute("class", "ingr-btn");
