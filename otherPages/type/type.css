@@ -2,9 +2,15 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: Montserrat, sans-serif;
     box-sizing: border-box;
 }
+body {
+    font-family: "Roboto", sans-serif;
+}
+@font-face {
+    font-family: Righteous-Regular;
+    src: url("../../assets/font/Righteous-Regular.ttf");
+  }
 :root {
     --main-color : #f79259 ;
 }
@@ -38,16 +44,17 @@ header i {
 }
 i{
     cursor: pointer;
-    color: white;
+    color: var(--main-color);;
 }
 .search {
     display: flex;
-    background-color: #FBC6A7;
+    background-color: #ffd7bf;
     border: 2px solid var(--main-color);
     border-radius: 50px;
     margin-bottom: 1rem;
 }
 .header-search {
+    font-family: Righteous-Regular;
     text-align: center;
     margin-bottom: 15px;
 }
@@ -59,7 +66,7 @@ i{
     padding: 0 1rem;
     font-size: 1.1rem;
     font-family: inherit;
-    background-color: #FBC6A7;
+    background-color: #ffd7bf;
     outline: 0;
     border: none;
     color:black;
@@ -67,7 +74,7 @@ i{
     border-bottom-left-radius: 2rem;
 }
 .search-control::placeholder{
-    color: #F79259;
+    color: var(--main-color);
 }
 .search-btn{
     width: 55px;
@@ -127,13 +134,148 @@ i{
     color: white;
     font-size: 20px;
     line-height: 20px;
+    cursor: pointer;
 }
 /* End Cards Style */
+/* start popup style */
+.overlay {
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(236, 202, 195, 0.76);
+    z-index: 1;
+}
+.pop-up {
+    background-color: white;
+    width: 90%;
+    height: 700px;
+    border-radius: 53px;
+    margin: 15% auto;
+    overflow: hidden;
+}
+#head-container {
+    position: fixed;
+    width: 90%;
+    height: 200px;
+    border-radius: 53px;
+    background-color: white;
+}
+.pop-up .close {
+    color: #f79259;
+    font-size: 35px;
+    margin-left: 85%;
+    margin-top: 3%;
+    cursor: pointer;
+    }
+.recipe-title {
+    font-family: Righteous-Regular;
+    color: #db8858;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    height: 80px;
+}
+.bar {
+    display: flex;
+    width: 310px;
+    height: 65px;
+    padding: 8px;
+    margin-left: 4.5%;
+    border-radius: 30px;
+    background: #e3e1e1;
+}
+.ingr-btn, .recpie-btn {
+    width: 135px;
+    height: 50px;
+    border: none;
+    font-size: 19px;
+    color: #999999;
+    background: #e3e1e1;
+    cursor: pointer;
+}
+.recpie-btn, .recpie-btn-style {
+    margin-left: 20px;
+}
+.ingr-btn-style, .recpie-btn-style {
+    width: 135px;
+    height: 50px;
+    border: none;
+    font-size: 19px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #f79259;
+    border: 5px solid #f3dfd9;
+    border-radius: 30px;
+}
+.content {
+    width:90%;
+    height: 500px;
+    margin: 200px auto 0;
+    font-size: 20px;
+    line-height: 40px;
+    overflow-y: scroll;
+}
+.ing-with-measures {
+    display: flex;
+    justify-content: space-evenly;
+}
+.ing-with-measures p {
+    display: inline-block;
+}
+.recpie-text {
+    display: none;
+    padding: 5px 20px;
+}
+/* end popup style */
 /* Start Media */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .cards-food .card,.cards-drink .card { 
         width: 25.33vw;
         height: 350px;
+    }
+    .pop-up .close {
+        font-size: 50px;
+    }
+    .recipe-title {
+        font-size: 25px;
+    }
+    .pop-up {
+        margin-top: 22.5%;
+    }
+    .bar {
+    width: 80%;
+    margin-left: 11%;
+    } 
+    .ingr-btn {
+    width: 180px;
+    height: 55px;
+    font-size: 25px;
+    margin-top: -0.5%;
+    margin-left: 8%;
+    }
+    .recpie-btn {
+    font-size: 25px;
+    margin-left: 10%;
+    }  
+    .ingr-btn-style, .recpie-btn-style {
+    width: 180px;
+    height: 55px;
+    margin-top: -0.5%;
+    font-size: 25px;
+    }
+    .ingr-btn-style {
+    margin-left: 8%;
+    }
+    .recpie-btn-style {
+    margin-left: 10%;
+    }
+    .content {
+        margin-top: 220px;
+        font-size: 23px;
     }
 }
 @media (min-width: 1024px) {
@@ -143,6 +285,48 @@ i{
     }
     .cards-food .card img,.cards-drink .card img {
         height: 170px;
+    }
+    .pop-up {
+        width: 50%;
+        height: 85%;
+        margin-top: 3.7%;
+    }
+    .pop-up .close {
+    font-size: 40px;
+    }
+    .recipe-title {
+    font-size: 25px;
+    }
+    #head-container {
+    width: 50%;
+    }
+    .bar {
+    width: 80%;
+    margin-left: 11%;
+    }
+    .ingr-btn {
+    width: 180px;
+    height: 50px;
+    font-size: 23px;
+    margin-left: 10%;
+    }
+    .recpie-btn {
+    width: 135px;
+    height: 50px;
+    font-size: 23px;
+    margin-left: 10%;
+    }
+    .ingr-btn-style, .recpie-btn-style {
+    width: 180px;
+    height: 55px;
+    font-size: 23px;
+    margin-top: -0.5%;
+    }
+    .ingr-btn-style {
+    margin-left: 8%;
+    }
+    .recpie-btn-style {
+    margin-left: 10%;
     }
 }
 /* End Media */
