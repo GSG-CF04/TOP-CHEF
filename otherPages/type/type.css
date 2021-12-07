@@ -10,30 +10,12 @@ body {
 @font-face {
     font-family: Righteous-Regular;
     src: url("../../assets/font/Righteous-Regular.ttf");
-  }
+}
 :root {
     --main-color : #f79259 ;
 }
-/* Start Geneal Style */
-/* Start Header Section Style */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 10px 5px;
-}
-header img {
-    height: 50px;
-    width: 50px;
-}
-header i {
-    font-size: 40px;
-    border: none;
-    color:var(--main-color);
-    border-radius: 50px;
-    cursor: pointer;
-}
-/* End Header Section Style */
+/* End Geneal Style */
+
 /* Start Search Section */
 .meal-search-box{
     padding: 10px;
@@ -229,6 +211,18 @@ i{
 .recpie-text {
     display: none;
     padding: 5px 20px;
+}
+.content::-webkit-scrollbar {
+    width: 0.8vw;
+}
+
+.content::-webkit-scrollbar-track {
+    background-color: #FBC6A7;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #F79259;
+    border-radius: 10px;
 }
 /* end popup style */
 /* Start Media */

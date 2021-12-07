@@ -7,7 +7,7 @@ Our app shows you many Food and Drinks categories , every category contains many
 ## Links
 
 * [Figma Link](https://www.figma.com/file/WIUhZOjggmxjJB5gyK2g6o/Untitled?node-id=0%3A1).
-* [Github pages](https://gsg-cf04.github.io/TOP-CHEF/).
+* [Live link](https://gsg-cf04.github.io/TOP-CHEF/).
 * [TheMealDB API](https://themealdb.com/api.php). 
 * [TheCocktail API](https://www.thecocktaildb.com/api.php). 
 

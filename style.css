@@ -47,7 +47,7 @@ hr {
 }
 @media screen and (min-width:768px) and (max-width:1023px) {
     main {
-        margin: 16vh auto;
+        margin: 30vh auto;
         flex-direction: row;
     }
     .logo {width: 50%;margin: 0 0;}
