@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+}
+header .left-arrow {
+    font-size: 45px;
+    color: #f79259;
+}
+header .logo {
+    width: 70px;
+    height: 70px;
+}
+body::-webkit-scrollbar {
+    width: 0.8vw;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #FBC6A7;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #F79259;
+    border-radius: 10px;
+}
