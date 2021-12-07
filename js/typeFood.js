@@ -45,7 +45,6 @@ const showMeals = (meal) => {
     .join("");
     holder.innerHTML = htmlDiv;
 };
-/* End Function */ 
 // getting meal's data
 function getMealRecipe(e) {
     // show a popup after clicking get recipe
@@ -105,19 +104,19 @@ let recipeText = document.querySelector(".recpie-text");
 let ingWithMeasures = document.querySelector(".ing-with-measures");
 // Adding Event Listener for ingerdients btn in popup
 ingBtn.addEventListener("click", () => {
-ingWithMeasures.style.display = "flex";
-recipeText.style.display = "none";
-recipeBtn.classList.remove("recpie-btn-style");
-recipeBtn.setAttribute("class", "recpie-btn");
-ingBtn.setAttribute("class", "ingr-btn-style");
+    ingWithMeasures.style.display = "flex";
+    recipeText.style.display = "none";
+    recipeBtn.classList.remove("recpie-btn-style");
+    recipeBtn.setAttribute("class", "recpie-btn");
+    ingBtn.setAttribute("class", "ingr-btn-style");
 });
 // Adding Event Listener for recipe btn in popup
 recipeBtn.addEventListener("click", () => {
-ingWithMeasures.style.display = "none";
-recipeText.style.display = "block";
-ingBtn.classList.remove("ingr-btn-style");
-ingBtn.setAttribute("class", "ingr-btn");
-recipeBtn.setAttribute("class", "recpie-btn-style");
+    ingWithMeasures.style.display = "none";
+    recipeText.style.display = "block";
+    ingBtn.classList.remove("ingr-btn-style");
+    ingBtn.setAttribute("class", "ingr-btn");
+    recipeBtn.setAttribute("class", "recpie-btn-style");
 });
 }
 // End of the popup content for meal recipe
@@ -125,3 +124,4 @@ recipeBtn.setAttribute("class", "recpie-btn-style");
 function closePopupWindow() {
     parent.style.display = "none";
 }
+/* End Function */ 

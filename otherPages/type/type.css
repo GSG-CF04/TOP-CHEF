@@ -10,11 +10,11 @@ body {
 @font-face {
     font-family: Righteous-Regular;
     src: url("../../assets/font/Righteous-Regular.ttf");
-  }
+}
 :root {
     --main-color : #f79259 ;
 }
-/* Start Geneal Style */
+/* End Geneal Style */
 /* Start Header Section Style */
 header {
     display: flex;
