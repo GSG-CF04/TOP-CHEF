@@ -60,7 +60,7 @@ In our app we let you know about a lot of meals and drinks, what are its ingredi
 * CSS : to style the pages.
 * Javascript (DOM Manipulations) : to create interaction between the pages and the user.
 * Javascript (promise) : to fetch data from APIs ([TheMealDB API](https://themealdb.com/api.php) and [TheCocktail API](https://www.thecocktaildb.com/api.php).
-
+* local Storage : to store the data.
 ## How to install project locally?
 
 * Open Git bash wherever you want to install the project.

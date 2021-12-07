@@ -45,7 +45,6 @@ const showDrinks = (drink) => {
     .join("");
     holder.innerHTML = htmlDiv;
 };
-/* End Function */ 
 // getting Drinks's data
 function getDrinkRecipe(e) {
     // show a popup after clicking get recipe btn
@@ -126,3 +125,4 @@ function drinkRecipeModal(drink) {
 function closePopupWindow() {
     parent.style.display = "none";
 }
+/* End Function */ 
